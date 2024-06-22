@@ -8,7 +8,7 @@ const productRoutes= require("./routes/productRoutes");
 const path= require('path');
 
 const app= express()
-const PORT =4000;
+const PORT = process.env.PORT || 4000;
 dotEnv.config();
 mongoose.connect(process.env.MONGO_URL)
     .then(()=>console.log("connected to mongo"))
@@ -24,3 +24,6 @@ app.listen(PORT,()=>{
     console.log(`server started and running at ${PORT}`);
 
 });
+app.use('/', (req,res)=>{
+    res.sendFile("<h1> Welcome to Subhi");
+})
