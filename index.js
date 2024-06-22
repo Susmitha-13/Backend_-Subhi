@@ -25,5 +25,5 @@ app.listen(PORT,()=>{
 
 });
 app.use('/', (req,res)=>{
-    res.sendFile("<h1> Welcome to Subhi");
+    res.send("<h1> Welcome to Subhi");
 })
